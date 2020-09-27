@@ -22,7 +22,7 @@
                 var count = timeslot.getAttribute('data-before');
                 timeslot.setAttribute('data-before', parseInt(count) + 1);
                 var users = timeslot.getAttribute('data-users');
-                if(users != null && users.lastIndexOf(schedule.user) == -1) {
+                if(users != null || users.lastIndexOf(schedule.user) == -1) {
                     timeslot.setAttribute('data-users', `${users}\n${schedule.user}`);
                 }
             });
