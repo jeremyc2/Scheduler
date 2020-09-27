@@ -13,20 +13,23 @@
             delete times[name];
         }
     }
+    function incrementCount(timeslot, user) {
+        var count = timeslot.getAttribute('data-before');
+        timeslot.setAttribute('data-before', parseInt(count) + 1);
+        var users = timeslot.getAttribute('data-users');
+        if(users == null) {
+            timeslot.setAttribute('data-users', user);
+        } else if(users.lastIndexOf(user) == -1) {
+            timeslot.setAttribute('data-users', users + '\u000D\u000A' + user);
+        }
+    }
     function populateCounts(schedules) {
         console.log(schedules);
         schedules.forEach(schedule => {
             Object.keys(schedule.data.available).forEach(time => {
                 var checkbox = document.querySelector(`input[type='checkbox'][name='${time}']`);
                 var timeslot = checkbox.parentElement;
-                var count = timeslot.getAttribute('data-before');
-                timeslot.setAttribute('data-before', parseInt(count) + 1);
-                var users = timeslot.getAttribute('data-users');
-                if(users == null) {
-                    timeslot.setAttribute('data-users', schedule.user);
-                } else if(users.lastIndexOf(schedule.user) == -1) {
-                    timeslot.setAttribute('data-users', users + '\u000D\u000A' + schedule.user);
-                }
+                incrementCount(timeslot, schedule.user);
             });
         });
     }
