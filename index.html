@@ -382,11 +382,11 @@
 
     document.querySelector("#submit").addEventListener('click', () => {
         var user = document.querySelector("#name").value;
-        if(user != null && user != "")
+        if(user != null && user != "") {
                 addSchedule(user, times);
                 resetCounts();
                 populateCounts();
-        else {
+        } else {
             alert("Please fill out your name");
         }
     })
