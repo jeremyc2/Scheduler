@@ -43,3 +43,10 @@ span {
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
+
+footer {
+	position: sticky;
+	bottom: 0px;
+	background-color: #24262e;
+	padding: 5px;
+}
