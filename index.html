@@ -16,7 +16,7 @@
     function populateCounts(schedules) {
         console.log(schedules)
         schedules.forEach(schedule => {
-            console.log(schedule.user);
+            console.log("User: " + schedule.user);
             Object.keys(schedule.data.available).forEach(time => {
                 var checkbox = document.querySelector(`input[type='checkbox'][name='${time}']`);
                 var timeslot = checkbox.parentElement;
