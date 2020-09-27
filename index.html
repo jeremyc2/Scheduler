@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="main.css" />
 <script>
 var times = {};
-function toggleTimeslot(name) {
+function toggleTimeslot(element) {
+  element.getElementsByTagName("input")[0].click();
+  var name = element.getAttribute('name');
   if(times[name] == null) {
     console.log(`Adding ${name} to times array`);
     times[name] = true;
@@ -19,295 +21,295 @@ function toggleTimeslot(name) {
 <div class="container">
     <div class="card">
         <h1>Monday</h1>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 09:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 09:00 AM">
             <input type="checkbox" />
             <span>09:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 10:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 10:00 AM">
             <input type="checkbox" />
             <span>10:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 11:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 11:00 AM">
             <input type="checkbox" />
             <span>11:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 12:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 12:00 PM">
             <input type="checkbox" />
             <span>12:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 01:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 01:00 PM">
             <input type="checkbox" />
             <span>01:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 02:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 02:00 PM">
             <input type="checkbox" />
             <span>02:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 03:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 03:00 PM">
             <input type="checkbox" />
             <span>03:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 04:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 04:00 PM">
             <input type="checkbox" />
             <span>04:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 05:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 05:00 PM">
             <input type="checkbox" />
             <span>05:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 06:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 06:00 PM">
             <input type="checkbox" />
             <span>06:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 07:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 07:00 PM">
             <input type="checkbox" />
             <span>07:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 08:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 08:00 PM">
             <input type="checkbox" />
             <span>08:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 09:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 09:00 PM">
             <input type="checkbox" />
             <span>09:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Monday 10:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Monday 10:00 PM">
             <input type="checkbox" />
             <span>10:00 PM</span>
         </div>
     </div>
     <div class="card">
         <h1>Tuesday</h1>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 09:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 09:00 AM">
             <input type="checkbox" />
             <span>09:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 10:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 10:00 AM">
             <input type="checkbox" />
             <span>10:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 11:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 11:00 AM">
             <input type="checkbox" />
             <span>11:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 12:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 12:00 PM">
             <input type="checkbox" />
             <span>12:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 01:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 01:00 PM">
             <input type="checkbox" />
             <span>01:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 02:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 02:00 PM">
             <input type="checkbox" />
             <span>02:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 03:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 03:00 PM">
             <input type="checkbox" />
             <span>03:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 04:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 04:00 PM">
             <input type="checkbox" />
             <span>04:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 05:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 05:00 PM">
             <input type="checkbox" />
             <span>05:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 06:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 06:00 PM">
             <input type="checkbox" />
             <span>06:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 07:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 07:00 PM">
             <input type="checkbox" />
             <span>07:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 08:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 08:00 PM">
             <input type="checkbox" />
             <span>08:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 09:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 09:00 PM">
             <input type="checkbox" />
             <span>09:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Tuesday 10:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Tuesday 10:00 PM">
             <input type="checkbox" />
             <span>10:00 PM</span>
         </div>
     </div>
     <div class="card">
         <h1>Wednesday</h1>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 09:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 09:00 AM">
             <input type="checkbox" />
             <span>09:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 10:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 10:00 AM">
             <input type="checkbox" />
             <span>10:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 11:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 11:00 AM">
             <input type="checkbox" />
             <span>11:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 12:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 12:00 PM">
             <input type="checkbox" />
             <span>12:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 01:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 01:00 PM">
             <input type="checkbox" />
             <span>01:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 02:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 02:00 PM">
             <input type="checkbox" />
             <span>02:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 03:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 03:00 PM">
             <input type="checkbox" />
             <span>03:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 04:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 04:00 PM">
             <input type="checkbox" />
             <span>04:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 05:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 05:00 PM">
             <input type="checkbox" />
             <span>05:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 06:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 06:00 PM">
             <input type="checkbox" />
             <span>06:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 07:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 07:00 PM">
             <input type="checkbox" />
             <span>07:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 08:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 08:00 PM">
             <input type="checkbox" />
             <span>08:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 09:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 09:00 PM">
             <input type="checkbox" />
             <span>09:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Wednesday 10:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Wednesday 10:00 PM">
             <input type="checkbox" />
             <span>10:00 PM</span>
         </div>
     </div>
     <div class="card">
         <h1>Thursday</h1>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 09:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 09:00 AM">
             <input type="checkbox" />
             <span>09:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 10:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 10:00 AM">
             <input type="checkbox" />
             <span>10:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 11:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 11:00 AM">
             <input type="checkbox" />
             <span>11:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 12:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 12:00 PM">
             <input type="checkbox" />
             <span>12:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 01:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 01:00 PM">
             <input type="checkbox" />
             <span>01:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 02:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 02:00 PM">
             <input type="checkbox" />
             <span>02:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 03:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 03:00 PM">
             <input type="checkbox" />
             <span>03:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 04:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 04:00 PM">
             <input type="checkbox" />
             <span>04:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 05:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 05:00 PM">
             <input type="checkbox" />
             <span>05:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 06:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 06:00 PM">
             <input type="checkbox" />
             <span>06:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 07:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 07:00 PM">
             <input type="checkbox" />
             <span>07:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 08:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 08:00 PM">
             <input type="checkbox" />
             <span>08:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 09:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 09:00 PM">
             <input type="checkbox" />
             <span>09:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Thursday 10:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Thursday 10:00 PM">
             <input type="checkbox" />
             <span>10:00 PM</span>
         </div>
     </div>
     <div class="card">
         <h1>Friday</h1>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 09:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 09:00 AM">
             <input type="checkbox" />
             <span>09:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 10:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 10:00 AM">
             <input type="checkbox" />
             <span>10:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 11:00 AM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 11:00 AM">
             <input type="checkbox" />
             <span>11:00 AM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 12:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 12:00 PM">
             <input type="checkbox" />
             <span>12:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 01:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 01:00 PM">
             <input type="checkbox" />
             <span>01:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 02:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 02:00 PM">
             <input type="checkbox" />
             <span>02:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 03:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 03:00 PM">
             <input type="checkbox" />
             <span>03:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 04:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 04:00 PM">
             <input type="checkbox" />
             <span>04:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 05:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 05:00 PM">
             <input type="checkbox" />
             <span>05:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 06:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 06:00 PM">
             <input type="checkbox" />
             <span>06:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 07:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 07:00 PM">
             <input type="checkbox" />
             <span>07:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 08:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 08:00 PM">
             <input type="checkbox" />
             <span>08:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 09:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 09:00 PM">
             <input type="checkbox" />
             <span>09:00 PM</span>
         </div>
-        <div class="timeslot" onclick="toggleTimeslot(this.getAttribute('name'))" name="Friday 10:00 PM">
+        <div class="timeslot" onclick="toggleTimeslot(this)" name="Friday 10:00 PM">
             <input type="checkbox" />
             <span>10:00 PM</span>
         </div>
