@@ -43,7 +43,7 @@ body {
 	white-space: pre;
 }
 
-.timeslot[data-before="4"] {
+.timeslot[data-before="5"] {
 	border-color: green;
 }
 
