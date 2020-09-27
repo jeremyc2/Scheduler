@@ -23,6 +23,13 @@
             timeslot.setAttribute('data-users', users + '\u000D\u000A' + user);
         }
     }
+    function resetCounts() {
+        for(var checkbox of document.querySelectorAll("input[type='checkbox']")) {
+            var timeslot = checkbox.parentElement;
+            timeslot.setAttribute('data-before', 0);
+            timeslot.removeAttribute('data-users');
+        }
+    }
     function populateCounts(schedules) {
         console.log(schedules);
         schedules.forEach(schedule => {
@@ -377,6 +384,8 @@
         var user = document.querySelector("#name").value;
         if(user != null && user != "")
                 addSchedule(user, times);
+                resetCounts();
+                populateCounts();
         else {
             alert("Please fill out your name");
         }
