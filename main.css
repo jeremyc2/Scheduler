@@ -78,12 +78,11 @@ footer {
 	background-color: #24262e;
 	padding: 5px;
 }
-
-.tooltip {
-	position: relative;
-}
   
-.tooltiptext {
+.tooltip::after {
+
+	content: "hi";
+
 	visibility: hidden;
 	width: 120px;
 	background-color: black;
@@ -100,6 +99,6 @@ footer {
 	margin-left: -60px;
 }
 
-.tooltip:hover > .tooltiptext {
+.tooltip:hover::after {
 	visibility: visible;
 }
