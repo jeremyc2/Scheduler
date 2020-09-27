@@ -22,6 +22,7 @@
                 var timeslot = checkbox.parentElement;
                 var count = timeslot.getAttribute('data-before');
                 timeslot.setAttribute('data-before', parseInt(count) + 1);
+                timeslot.setAttribute('data-users', schedule.user);
             });
         });
     }
@@ -32,7 +33,7 @@
 <div class="container">
     <div class="card">
         <h1>Monday</h1>
-        <div data-before="0" data-users class="timeslot tooltip">
+        <div data-before="0" class="timeslot tooltip">
             <input type="checkbox" onclick="toggleTimeslot(this)" name="Monday 09:00 AM" />
             <span>09:00 AM</span>
         </div>
