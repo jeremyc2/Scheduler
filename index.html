@@ -5,16 +5,12 @@
     var times = {};
     function toggleTimeslot(element) {
         var name = element.getAttribute('name');
-        var timeslot = element.parentElement;
-        var count = timeslot.getAttribute('data-before');
         if(times[name] == null) {
             console.log(`Adding ${name} to times array`);
             times[name] = true;
-            timeslot.setAttribute('data-before', parseInt(count) + 1);
         } else {
             console.log(`Deleting ${name} from times array`);
             delete times[name];
-            timeslot.setAttribute('data-before', parseInt(count) - 1);
         }
     }
     function incrementCount(timeslot, user) {
