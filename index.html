@@ -381,19 +381,22 @@
     });
 
     document.querySelector("#submit").addEventListener('click', () => {
+
         var user = document.querySelector("#name").value;
         if(user != null && user != "") {
-                addSchedule(user, times);
+                addSchedule(user, times, () => {getSchedules();});
                 resetCounts();
-                getSchedules();
         } else {
             alert("Please fill out your name");
         }
     })
 
-    function addSchedule(user, schedule) {
+    function addSchedule(user, schedule, callback) {
         schedules.doc(user).set({available: schedule})
             .then(() => {
+                if(callback != null) {
+                    callback();
+                }
                 console.log('Document wrote successfully');
                 alert('Document wrote successfully');
             })
