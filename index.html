@@ -360,8 +360,14 @@
 
     function addSchedule(user, schedule) {
         schedules.doc(user).set({available: schedule})
-            .then(() => console.log('Document wrote successfully'))
-            .catch(error => console.error('Document write failed: ', error));
+            .then(() => {
+                console.log('Document wrote successfully');
+                alert('Document wrote successfully');
+            })
+            .catch(error => {
+                console.error('Document write failed: ', error);
+                alert('Document write failed');
+            });
     }
 
 </script>
