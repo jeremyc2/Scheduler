@@ -21,7 +21,10 @@
                 var timeslot = checkbox.parentElement;
                 var count = timeslot.getAttribute('data-before');
                 timeslot.setAttribute('data-before', parseInt(count) + 1);
-                timeslot.setAttribute('data-users', schedule.user);
+                var users = timeslot.getAttribute('data-before');
+                if(users.lastIndexOf(schedule.user) == -1) {
+                    timeslot.setAttribute('data-users', `${users}\n${schedule.user}`);
+                }
             });
         });
     }
