@@ -359,6 +359,10 @@
 
     const schedules = db.collection('schedules');
 
+    document.addEventListener("DOMContentLoaded", () => {
+        getSchedules();
+    });
+
     document.querySelector("#submit").addEventListener('click', () => {
         var user = document.querySelector("#name").value;
         if(user != null && user != "")
