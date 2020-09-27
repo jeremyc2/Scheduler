@@ -2,6 +2,8 @@
 <link rel="icon" href="favicon.svg" />
 <link rel="stylesheet" href="main.css" />
 <script>
+    // Case insensitive query checkbox by wildcard
+    // document.querySelectorAll("input[name*='monday' i][name*='10'][name*='PM']").forEach(element => element.click())
     var times = {};
     function toggleTimeslot(element) {
         var name = element.getAttribute('name');
