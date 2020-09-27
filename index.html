@@ -14,8 +14,10 @@
         }
     }
     function populateCounts(schedules) {
+        console.log(schedules)
         schedules.forEach(schedule => {
-            Object.keys(schedule.available).forEach(time => {
+            console.log(schedule.user);
+            Object.keys(schedule.data.available).forEach(time => {
                 var checkbox = document.querySelector(`input[type='checkbox'][name='${time}']`);
                 var timeslot = checkbox.parentElement;
                 var count = timeslot.getAttribute('data-before');
@@ -386,7 +388,9 @@
 
     function getSchedules() {
         return schedules.get().then(snapshot => {
-            populateCounts(snapshot.docs.map(doc => doc.data()));
+            populateCounts(snapshot.docs.map(doc => {
+                return {user: doc.id, data: doc.data()};
+            }));
         });
     }
 
