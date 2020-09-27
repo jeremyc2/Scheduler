@@ -24,9 +24,19 @@ body {
 	width: 25px;
 }
 
+.card div {
+	display: flex;
+	justify-content: center;
+}
+
 button {
 	padding: 10px;
 	display: block;
 	margin: 10px auto;
 	text-transform: uppercase;
+}
+
+span {
+	padding-top: 7px;
+	padding-bottom: 7px;
 }
