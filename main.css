@@ -43,6 +43,10 @@ body {
 	white-space: pre;
 }
 
+.timeslot[data-before="4"] {
+	border-color: green;
+}
+
 .timeslot::before {
 	display: block;
 	content: attr(data-before);
