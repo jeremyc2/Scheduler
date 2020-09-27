@@ -81,7 +81,7 @@ footer {
   
 .tooltip::after {
 
-	content: "hi";
+	content: attr(data-users);
 
 	visibility: hidden;
 	width: 120px;
@@ -99,6 +99,6 @@ footer {
 	margin-left: -60px;
 }
 
-.tooltip:hover::after {
+.tooltip[data-users]:hover::after {
 	visibility: visible;
 }
