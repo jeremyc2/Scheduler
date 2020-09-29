@@ -28,7 +28,7 @@
         var users = timeslot.getAttribute('data-users');
         if(users == null) {
             timeslot.setAttribute('data-users', 'Users Available' + '\u000D\u000A' + user);
-        } else if(users.lastIndexOf(user) == -1) {
+        } else if(users.split('\u000D\u000A').splice(1).lastIndexOf(user) == -1) {
             timeslot.setAttribute('data-users', users + '\u000D\u000A' + user);
         }
     }
