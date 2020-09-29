@@ -59,10 +59,15 @@ body {
     border-radius: 7px;
     color: black;
     padding-top: 5px;
-    top: -6px;
+	top: -6px;
+	border: solid #fff 1px;
 }
 
 .timeslot.full {
+	border-color: green;
+}
+
+.timeslot.full > .user-count {
 	border-color: green;
 }
 
