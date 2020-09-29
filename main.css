@@ -105,12 +105,17 @@ footer {
 	background-color: #24262e;
 	padding: 5px;
 }
+
+.tooltip::after, .tooltip::before {
+	visibility: hidden;
+	position: absolute;
+	z-index: 1;
+}
   
 .tooltip::after {
 
 	content: attr(data-users);
 
-	visibility: hidden;
 	width: 120px;
 	background: linear-gradient(#545454 23px, black 23px);
 	color: #fff;
@@ -118,14 +123,11 @@ footer {
 	padding: 5px 0;
 	border: solid white 1px;
 
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
 	bottom: 100%;
 	left: 50%;
 	margin-left: -60px;
 }
 
-.tooltip[data-users]:hover::after {
+.tooltip[data-users]:hover::after, .tooltip[data-users]:hover::before {
 	visibility: visible;
 }
