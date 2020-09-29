@@ -48,17 +48,18 @@ body {
 }
 
 .timeslot > .user-count {
-	display: block;
-	content: attr(data-before);
-	position: absolute;
-	background-color: #989898;
-	right: 0;
-	height: 13px;
-	width: 15px;
-	font-size: 10px;
-	border-radius: 5px;
-	color: black;
-	padding-top: 2.5px;
+    display: block;
+    content: attr(data-before);
+    position: absolute;
+    background-color: #a5a5a5;
+    right: -6px;
+    height: 15px;
+    width: 18px;
+    font-size: 10px;
+    border-radius: 7px;
+    color: black;
+    padding-top: 5px;
+    top: -6px;
 }
 
 .timeslot.full {
