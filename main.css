@@ -25,21 +25,27 @@ body {
 }
 
 .card {
-	width: 160px;
+	width: 175px;
 	margin: 5px;
-	padding: 25px;
+	padding: 15px;
 	border-radius: 20px;
 	background-color: #1d1e22;
 }
 
+.card > h1 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1.7em;
+}
+
 .card input {
-	height: 25px;
-	width: 25px;
+	height: 33.33px;
+    width: 33.33px;
+    margin: 0;
 }
 
 .timeslot {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	border: solid #fff 0.05px;
 	border-radius: 5px;
 	margin: 5px;
@@ -71,28 +77,6 @@ body {
 	border-color: green;
 }
 
-/* .timeslot[data-before="5"] {
-	border-color: green;
-} */
-
-/* .timeslot::before {
-	display: block;
-	content: attr(data-before);
-	position: absolute;
-	background-color: #989898;
-	right: 0;
-	height: 13px;
-	width: 15px;
-	font-size: 10px;
-	border-radius: 5px;
-	color: black;
-	padding-top: 2.5px;
-} */
-
-/* .timeslot[data-before="0"]::before {
-	display: none;
-} */
-
 button {
 	padding: 10px;
 	display: block;
@@ -103,6 +87,7 @@ button {
 span {
 	padding-top: 7px;
 	padding-bottom: 7px;
+	margin: auto;
 }
 
 footer {
@@ -141,6 +126,8 @@ footer {
 
 	bottom: 131%;
 	right: 13.5px;
+
+	overflow: hidden;
 }
 
 .tooltip::after {
