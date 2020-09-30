@@ -5,6 +5,7 @@ body {
 	text-align: center;
 }
 
+
 .hidden {
 	display: none !important;
 }
@@ -120,7 +121,7 @@ footer {
 	background: linear-gradient(#545454 23px, #313131 23px);
 	color: #fff;
 	text-align: center;
-	padding: 5px;
+	padding: 5px 0;
 	border: solid white 1px;
 	border-radius: 5px;
 
