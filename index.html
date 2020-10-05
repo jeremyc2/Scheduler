@@ -2,9 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.7">
 <link rel="icon" href="favicon.svg" />
 <link rel="stylesheet" href="main.css" />
+<script src="autocomplete.js"></script>
 <script>
     // Case insensitive query checkbox by wildcard
     // document.querySelectorAll("input[name*='monday' i][name*='10'][name*='PM']").forEach(element => element.click())
+    var allSchedules = [];
     var times = {};
     function toggleTimeslot(element) {
         var name = element.getAttribute('name');
@@ -15,6 +17,13 @@
             console.log(`Deleting ${name} from times array`);
             delete times[name];
         }
+    }
+    function uncheckAll() {
+        var textinputs = document.querySelectorAll('input[type=checkbox]'); 
+        var checked = [].filter.call( textinputs, function( el ) {
+            return el.checked;
+        });
+        checked.forEach(checkbox => checkbox.click());
     }
     function incrementCount(timeslot, user) {
         var userCountElement = timeslot.querySelector(".user-count");
@@ -51,9 +60,29 @@
                 incrementCount(timeslot, schedule.user);
             });
         });
+        autocomplete(document.getElementById("name"), allSchedules.map(x => x.user));
+    }
+    function loadUser(user) {
+        var success = confirm("Loading this user's schedule will clear your current checkboxes. Are you sure you want to continue?");
+        if(success) {
+            var i = 0;
+            uncheckAll();
+            allSchedules.filter(schedule => schedule.user == user).forEach(schedule => {
+                if(i == 0) {
+                    uncheckAll();
+                }
+                i++;
+                Object.keys(schedule.data.available).forEach(time => {
+                    var checkbox = document.querySelector(`input[type='checkbox'][name='${time}']`);
+                    checkbox.click();
+                });
+            });
+        }
     }
 </script>
-<input type="text" id="name" />
+<div class="autocomplete">
+    <input type="text" id="name" />
+</div>
 <i>Your Name</i>
 <h1>What times are you available to meet?</h1>
 <i>Keyboard Shortcuts: [TAB] for next. [SHIFT] + [TAB] for previous. [SPACEBAR] for select/unselect.</i>
@@ -502,7 +531,9 @@
     function getSchedules() {
         return schedules.get().then(snapshot => {
             populateCounts(snapshot.docs.map(doc => {
-                return {user: doc.id, data: doc.data()};
+                var document = {user: doc.id, data: doc.data()};
+                allSchedules.push(document);
+                return document;
             }));
         });
     }
