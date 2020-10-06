@@ -558,7 +558,12 @@
 
     function addSchedule(user, schedule, callback) {
         if(Object.keys(schedule).length == 0) {
-            deleteSchedule(user);
+            deleteSchedule(user).then(() => {
+                if(callback != null) {
+                    callback();
+                }
+                alert('Submitted Successfully');
+            });
             return;
         }
         toggleLoading();
@@ -577,7 +582,7 @@
     }
     function deleteSchedule(user) {
         toggleLoading();
-        schedules.doc(user).delete().then(function() {
+        return schedules.doc(user).delete().then(function() {
             console.log("Document successfully deleted!");
         }).then(toggleLoading).catch(function(error) {
             console.error("Error removing document: ", error);
