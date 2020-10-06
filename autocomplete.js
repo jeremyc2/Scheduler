@@ -58,10 +58,14 @@ function autocomplete(inp, arr) {
     }
     function autocompleteListener(e) {
       var a, b, i, val = this.value;
+
+      var buildWholeList = false;
     
       /*close any already open lists of autocompleted values*/
       closeAllLists();
-      if (!val) { return false;}
+      if (!val) { 
+        buildWholeList = true;
+      }
       currentFocus = -1;
       /*create a DIV element that will contain the items (values):*/
       a = document.createElement("DIV");
@@ -72,7 +76,7 @@ function autocomplete(inp, arr) {
       /*for each item in the array...*/
       for (i = 0; i < arr.length; i++) {
         /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        if (buildWholeList || arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
           /*create a DIV element for each matching element:*/
           b = document.createElement("DIV");
           /*make the matching letters bold:*/
