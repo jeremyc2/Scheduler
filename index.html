@@ -591,9 +591,7 @@
 
     function getSchedules() {
         toggleLoading();
-        allSchedules = allSchedules.map(x => {
-            x.data.available = {};
-        });
+        allSchedules = [];
         schedules.get().then(snapshot => {
             populateCounts(snapshot.docs.map(doc => {
                 var document = {user: doc.id, data: doc.data()};
