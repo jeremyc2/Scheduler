@@ -63,8 +63,8 @@
         autocomplete(document.getElementById("name"), allSchedules.map(x => x.user));
     }
     function loadUser(user) {
-        var success = confirm('We saved your last submit. Would you like input your previous selections? ' + 
-            'This will override your current selection.');
+        var success = confirm('Would you like input your previous selections? ' + 
+            'This will override your current checkboxes.');
         if(success) {
             var i = 0;
             uncheckAll();
