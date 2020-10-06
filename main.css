@@ -142,6 +142,16 @@ button {
 	text-transform: uppercase;
 }
 
+#clear {
+    position: relative;
+    left: -25px;
+}
+
+#submit {
+    position: relative;
+    right: -25px;
+}
+
 .load-user {
 	display: none;
 	margin: 0;
