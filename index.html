@@ -557,6 +557,9 @@
 
     function addSchedule(user, schedule, callback) {
         toggleLoading();
+        if(Object.keys(schedule).length == 0) {
+            deleteSchedule(user);
+        }
         schedules.doc(user).set({available: schedule})
             .then(() => {
                 if(callback != null) {
