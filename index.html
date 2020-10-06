@@ -79,7 +79,50 @@
             });
         }
     }
+    function toggleLoading() {
+        document.getElementById("loading").classList.toggle("hidden");
+    }
 </script>
+<link rel="stylesheet" href="gear.css">
+<div id="loading" class="hidden">
+    <div class="container-gears">
+        <div class="gearbox">
+        <div class="overlay"></div>
+        <div class="gear one">
+            <div class="gear-inner">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            </div>
+        </div>
+        <div class="gear two">
+            <div class="gear-inner">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            </div>
+        </div>
+        <div class="gear three">
+            <div class="gear-inner">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            </div>
+        </div>
+        <div class="gear four large">
+            <div class="gear-inner">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            </div>
+        </div>
+        </div>
+        <h1 class="loading">Loading...</h1>
+    </div>
+</div>
 <div class="autocomplete">
     <input type="text" id="name" autocomplete="off"/>
 </div>
@@ -497,24 +540,23 @@
 
     const schedules = db.collection('schedules');
 
-    document.addEventListener("DOMContentLoaded", () => {
-        getSchedules();
-    });
+    document.addEventListener("DOMContentLoaded", getSchedules);
+
+    document.querySelector("#clear").addEventListener('click', uncheckAll);
 
     document.querySelector("#submit").addEventListener('click', () => {
 
         var user = document.querySelector("#name").value;
         if(user != null && user != "") {
-                addSchedule(user, times, () => {getSchedules();});
+                addSchedule(user, times, getSchedules);
                 resetCounts();
         } else {
             alert("Please fill out your name");
         }
     });
 
-    document.querySelector("#clear").addEventListener('click', uncheckAll);
-
     function addSchedule(user, schedule, callback) {
+        toggleLoading();
         schedules.doc(user).set({available: schedule})
             .then(() => {
                 if(callback != null) {
@@ -522,7 +564,7 @@
                 }
                 console.log('Document wrote successfully');
                 alert('Document wrote successfully');
-            })
+            }).then(toggleLoading)
             .catch(error => {
                 console.error('Document write failed: ', error);
                 alert('Document write failed');
@@ -530,13 +572,14 @@
     }
 
     function getSchedules() {
-        return schedules.get().then(snapshot => {
+        toggleLoading();
+        schedules.get().then(snapshot => {
             populateCounts(snapshot.docs.map(doc => {
                 var document = {user: doc.id, data: doc.data()};
                 allSchedules.push(document);
                 return document;
             }));
-        });
+        }).then(toggleLoading);
     }
 
 </script>
