@@ -464,6 +464,7 @@
     </div>
 </div>
 <footer>
+    <button id="clear">Clear</button>
     <button id="submit">Submit</button>
 </footer>
 
@@ -511,7 +512,9 @@
         } else {
             alert("Please fill out your name");
         }
-    })
+    });
+
+    document.querySelector("#submit").addEventListener('click', uncheckAll);
 
     function addSchedule(user, schedule, callback) {
         schedules.doc(user).set({available: schedule})
