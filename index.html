@@ -568,11 +568,11 @@
                     callback();
                 }
                 console.log('Document wrote successfully');
-                alert('Document wrote successfully');
+                alert('Submitted Successfully');
             }).then(toggleLoading)
             .catch(error => {
                 console.error('Document write failed: ', error);
-                alert('Document write failed');
+                alert('Submit Failed');
             });
     }
     function deleteSchedule(user) {
