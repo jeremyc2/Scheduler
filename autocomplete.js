@@ -85,13 +85,14 @@ function autocomplete(inp, arr) {
     
           b.setAttribute("data-value",arr[i]);
     
-          b.innerHTML += `<button class='load-user' onclick=\"loadUser('${arr[i]}')\">Load</button>`;
-    
           /*execute a function when someone clicks on the item value (DIV element):*/
           b.addEventListener("click", function(e) {
               /*insert the value for the autocomplete text field:*/
               var name = this.getAttribute("data-value");
               inp.value = name;
+
+              loadUser(name);
+
               /*close the list of autocompleted values,
               (or any other open lists of autocompleted values:*/
               closeAllLists();

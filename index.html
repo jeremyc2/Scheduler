@@ -63,7 +63,8 @@
         autocomplete(document.getElementById("name"), allSchedules.map(x => x.user));
     }
     function loadUser(user) {
-        var success = confirm("Loading this user's schedule will clear your current checkboxes. Are you sure you want to continue?");
+        var success = confirm('This user already exists. Would you like to check the boxes from your latest submit? ' + 
+                                'This will override your current selection.');
         if(success) {
             var i = 0;
             uncheckAll();
