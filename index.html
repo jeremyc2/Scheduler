@@ -514,7 +514,7 @@
         }
     });
 
-    document.querySelector("#submit").addEventListener('click', uncheckAll);
+    document.querySelector("#clear").addEventListener('click', uncheckAll);
 
     function addSchedule(user, schedule, callback) {
         schedules.doc(user).set({available: schedule})
