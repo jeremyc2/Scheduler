@@ -220,7 +220,7 @@ div::-webkit-scrollbar {
   
 /* Track */
 div::-webkit-scrollbar-track {
-	background: transparent; 
+	background: white; 
 }
    
 /* Handle */
