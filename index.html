@@ -556,10 +556,11 @@
     });
 
     function addSchedule(user, schedule, callback) {
-        toggleLoading();
         if(Object.keys(schedule).length == 0) {
             deleteSchedule(user);
+            return;
         }
+        toggleLoading();
         schedules.doc(user).set({available: schedule})
             .then(() => {
                 if(callback != null) {
@@ -574,9 +575,10 @@
             });
     }
     function deleteSchedule(user) {
+        toggleLoading();
         schedules.doc(user).delete().then(function() {
             console.log("Document successfully deleted!");
-        }).catch(function(error) {
+        }).then(toggleLoading).catch(function(error) {
             console.error("Error removing document: ", error);
         });
     }
